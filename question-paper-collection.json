@@ -10,7 +10,7 @@
                             "isRoot": true,
                             "iconClass": "fa fa-book",
                             "showAddCollaborator": false,
-                            "addFromLibraryBetaEnabled": true                     
+                            "addFromLibraryEnabled": true                     
                         }
                     }
                 },
