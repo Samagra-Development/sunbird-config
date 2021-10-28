@@ -1,7 +1,6 @@
 {
     "result": {
         "objectCategoryDefinition": {
-            "identifier": "obj-cat:question-paper_collection_01309282781705830427",
             "objectMetadata": {
                 "config": {
                     "sourcingSettings": {
@@ -11,13 +10,7 @@
                             "isRoot": true,
                             "iconClass": "fa fa-book",
                             "showAddCollaborator": false,
-                            "addFromLibraryBetaEnabled": true,
-                            "headerConfiguration": [
-                                {
-                                    "attribute": "primaryCategory",
-                                    "label": "Question Types"
-                                }
-                            ]
+                            "addFromLibraryBetaEnabled": true                     
                         }
                     }
                 },
@@ -291,7 +284,7 @@
                             "code": "topic",
                             "visible": true,
                             "editable": true,
-                            "dataType": "text",
+                            "dataType": "list",
                             "depends": [
                                 "board",
                                 "medium",
