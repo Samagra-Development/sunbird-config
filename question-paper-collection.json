@@ -10,7 +10,52 @@
                             "isRoot": true,
                             "iconClass": "fa fa-book",
                             "showAddCollaborator": false,
-                            "addFromLibraryEnabled": true                     
+                            "addFromLibraryEnabled": true,
+                            "children": {},
+                            "hierarchy": {
+                                "level1": {
+                                    "name": "Section",
+                                    "type": "Unit",
+                                    "mimeType": "application/vnd.ekstep.content-collection",
+                                    "contentType": "Collection",
+                                    "primaryCategory": "Question Paper",
+                                    "iconClass": "fa fa-folder-o",
+                                    "children": {}
+                                },
+                                "level2": {
+                                    "name": "Section",
+                                    "type": "Unit",
+                                    "mimeType": "application/vnd.ekstep.content-collection",
+                                    "contentType": "Collection",
+                                    "primaryCategory": "Question Paper",
+                                    "iconClass": "fa fa-folder-o",
+                                    "children": {
+                                        "Content": []
+                                    }
+                                },
+                                "level3": {
+                                    "name": "Section",
+                                    "type": "Unit",
+                                    "mimeType": "application/vnd.ekstep.content-collection",
+                                    "contentType": "Collection",
+                                    "primaryCategory": "Question Paper",
+                                    "iconClass": "fa fa-folder-o",
+                                    "children": {
+                                        "Content": []
+                                    }
+                                },
+                                "level4": {
+                                    "name": "Section",
+                                    "type": "Unit",
+                                    "mimeType": "application/vnd.ekstep.content-collection",
+                                    "contentType": "Collection",
+                                    "primaryCategory": "Question Paper",
+                                    "iconClass": "fa fa-folder-o",
+                                    "children": {
+                                        "Content": []
+                                    }
+                                }
+                            }
                         }
                     }
                 },
