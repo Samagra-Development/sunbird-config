@@ -12,7 +12,7 @@
                             "showAddCollaborator": false,
                             "addFromLibraryEnabled": true,
                             "children": {},
-                            "showHeaders": true,
+                            "dynamicHeadersEnabled": true,
                             "hierarchy": {
                                 "level1": {
                                     "name": "Section",
