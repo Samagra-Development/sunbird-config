@@ -734,10 +734,10 @@
                                 "class": "sb-g-col-lg-1"
                             },
                             "name": "Topic",
-                            "description": "Choose a Topics",
+                            "description": "Choose a Chapters",
                             "inputType": "topicselector",
-                            "label": "Topic(s)",
-                            "placeholder": "Choose Topics",
+                            "label": "Chapter(s)",
+                            "placeholder": "Choose Chapter",
                             "required": false
                         },
                         {
@@ -754,10 +754,10 @@
                             "editable": true,
                             "dataType": "list",
                             "description": "learningOutcome",
-                            "label": "Learning Outcome",
+                            "label": "Competency",
                             "required": false,
                             "name": "learningOutcome",
-                            "placeholder": "Select Learning Outcome",
+                            "placeholder": "Select Competency",
                             "output": "name",
                             "renderingHints": {
                                 "class": "sb-g-col-lg-1"
