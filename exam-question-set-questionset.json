@@ -37,6 +37,10 @@
                             "enum": [
                                 "application/vnd.sunbird.questionset"
                             ]
+                        },
+                        "printable": {
+                            "type": "boolean",
+                            "default": true
                         }
                     }
                 }
@@ -149,7 +153,7 @@
                         {
                             "code": "subject",
                             "visible": true,
-                            "editable": true,
+                            "editable": false,
                             "default": "",
                             "dataType": "list",
                             "renderingHints": {
@@ -656,7 +660,7 @@
                                     "default": "",
                                     "dataType": "text",
                                     "inputType": "text",
-                                    "editable": true,
+                                    "editable": false,
                                     "required": true,
                                     "visible": true,
                                     "renderingHints": {
@@ -692,7 +696,7 @@
                                     "description": "Copyright",
                                     "dataType": "text",
                                     "inputType": "text",
-                                    "editable": true,
+                                    "editable": false,
                                     "required": true,
                                     "visible": true,
                                     "renderingHints": {
