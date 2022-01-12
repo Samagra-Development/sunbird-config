@@ -410,15 +410,15 @@
               "placeholder": "Select skills",
               "terms": [
                 {
-                  "value": "remember",
+                  "value": "knowledge",
                   "name": "Knowledge"
                 },
                 {
-                  "value": "understand",
+                  "value": "understanding",
                   "name": "Understanding"
                 },
                 {
-                  "value": "apply",
+                  "value": "application",
                   "name": "Application"
                 }
               ],
