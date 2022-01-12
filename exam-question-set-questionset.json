@@ -425,7 +425,7 @@
               "renderingHints": {
                 "class": "sb-g-col-lg-1 required"
               },
-              "required": false,
+              "required": true,
               "visible": true,
               "editable": true,
               "name": "Learning Level",
