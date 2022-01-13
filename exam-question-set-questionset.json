@@ -24,6 +24,7 @@
               },
               "addFromLibraryEnabled": true,
               "dynamicHeadersEnabled": true,
+              "publishQuestionset": false,
               "hierarchy": {
                 "level1": {
                   "name": "Section",
