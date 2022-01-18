@@ -269,7 +269,7 @@
               "label": "Medium(s) of the audience",
               "required": true,
               "name": "Medium",
-              "inputType": "select",
+              "inputType": "nestedselect",
               "placeholder": "Select Medium",
               "validations": [
                 {
@@ -953,8 +953,6 @@
                   },
                   "default": "Default",
                   "range": [
-                    "Private",
-                    "Public",
                     "Default"
                   ],
                   "validations": [
