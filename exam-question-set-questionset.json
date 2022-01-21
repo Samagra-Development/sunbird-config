@@ -25,6 +25,7 @@
               "addFromLibraryEnabled": true,
               "dynamicHeadersEnabled": true,
               "publishQuestionset": false,
+              "bulkUploadEnabled": false,
               "hierarchy": {
                 "level1": {
                   "name": "Section",
