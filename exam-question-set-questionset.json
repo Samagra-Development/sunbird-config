@@ -1,6 +1,7 @@
 {
-  "request": {
+  "result": {
     "objectCategoryDefinition": {
+      "identifier": "obj-cat:exam-question-set_questionset_01309282781705830427",
       "objectMetadata": {
         "childrenConfig": {
           "choice": {
