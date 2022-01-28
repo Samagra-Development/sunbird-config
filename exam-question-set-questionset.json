@@ -26,6 +26,7 @@
               "dynamicHeadersEnabled": true,
               "publishQuestionset": false,
               "bulkUploadEnabled": false,
+              "downloadCsvEnabled": true,
               "hierarchy": {
                 "level1": {
                   "name": "Section",
