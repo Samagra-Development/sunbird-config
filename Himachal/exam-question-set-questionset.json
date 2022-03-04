@@ -1,0 +1,1609 @@
+{
+  "result": {
+    "objectCategoryDefinition": {
+      "identifier": "obj-cat:exam-question-set_questionset_01334203864941363283",
+      "objectMetadata": {
+        "childrenConfig": {
+          "choice": {
+            "numberOfOptions": 4
+          }
+        },
+        "config": {
+          "sourcingSettings": {
+            "collection": {
+              "maxDepth": 1,
+              "objectType": "QuestionSet",
+              "primaryCategory": "Exam Question Set",
+              "isRoot": true,
+              "iconClass": "fa fa-book",
+              "children": {
+                "Question": [
+                  "Multiple Choice Question",
+                  "Subjective Question"
+                ]
+              },
+              "addFromLibraryEnabled": true,
+              "dynamicHeadersEnabled": true,
+              "publishQuestionset": false,
+              "bulkUploadEnabled": false,
+              "downloadCsvEnabled": true,
+              "hierarchy": {
+                "level1": {
+                  "name": "Section",
+                  "type": "Unit",
+                  "mimeType": "application/vnd.sunbird.questionset",
+                  "primaryCategory": "Exam Question Set",
+                  "iconClass": "fa fa-folder-o",
+                  "children": {
+                    "Question": [
+                      "Multiple Choice Question",
+                      "Subjective Question"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "schema": {
+          "properties": {
+            "mimeType": {
+              "type": "string",
+              "enum": [
+                "application/vnd.sunbird.questionset"
+              ]
+            },
+            "printable": {
+              "type": "boolean",
+              "default": true
+            },
+            "author": {
+              "type": "string",
+              "default": "SCERT Haryana"
+            }
+          }
+        }
+      },
+      "languageCode": [],
+      "name": "Exam Question Set",
+      "forms": {
+        "blueprintCreate": {
+          "templateName": "",
+          "required": [],
+          "properties": [
+            {
+              "code": "topics",
+              "dataType": "list",
+              "description": "",
+              "editable": true,
+              "index": 0,
+              "inputType": "multiSelect",
+              "label": "Chapters",
+              "name": "Chapters",
+              "placeholder": "Please select chapters",
+              "renderingHints": {},
+              "required": true
+            },
+            {
+              "code": "learningOutcomes",
+              "dataType": "list",
+              "description": "",
+              "editable": true,
+              "index": 1,
+              "inputType": "multiSelect",
+              "label": "Competencies",
+              "name": "Competencies",
+              "placeholder": "Please select Competencies",
+              "depends": [
+                "chapters"
+              ],
+              "renderingHints": {},
+              "required": true
+            },
+            {
+              "code": "learningLevels",
+              "editable": true,
+              "displayProperty": "Editable",
+              "dataType": "text",
+              "renderingHints": {
+                "semanticColumnWidth": "twelve"
+              },
+              "label": "Skills Tested",
+              "required": true,
+              "name": "Learning Levels",
+              "index": 2,
+              "inputType": "select",
+              "placeholder": "",
+              "default": 0,
+              "options": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "children": [
+                {
+                  "type": "learningLevel",
+                  "label": "Knowledge",
+                  "code": "remember"
+                },
+                {
+                  "type": "learningLevel",
+                  "label": "Understanding",
+                  "code": "understand"
+                },
+                {
+                  "type": "learningLevel",
+                  "label": "Application",
+                  "code": "apply"
+                }
+              ]
+            },
+            {
+              "code": "questionTypes",
+              "editable": true,
+              "displayProperty": "Editable",
+              "dataType": "text",
+              "renderingHints": {
+                "semanticColumnWidth": "twelve"
+              },
+              "description": "Question Types",
+              "index": 2,
+              "label": "Question Types",
+              "default": 0,
+              "required": true,
+              "name": "Question Types",
+              "inputType": "select",
+              "children": [
+                {
+                  "type": "questionType",
+                  "label": "Objective",
+                  "code": "Objective"
+                },
+                {
+                  "type": "questionType",
+                  "label": "Very Short Answer",
+                  "code": "VSA"
+                },
+                {
+                  "type": "questionType",
+                  "label": "Short Answer",
+                  "code": "SA"
+                },
+                {
+                  "type": "questionType",
+                  "label": "Long Answer",
+                  "code": "LA"
+                }
+              ],
+              "options": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "placeholder": "Question Types"
+            },
+            {
+              "code": "totalMarks",
+              "editable": true,
+              "displayProperty": "Editable",
+              "dataType": "text",
+              "renderingHints": {
+                "semanticColumnWidth": "three"
+              },
+              "description": "Total Marks",
+              "index": 4,
+              "label": "Total Marks",
+              "required": true,
+              "default": 0,
+              "name": "Total Marks",
+              "inputType": "text",
+              "placeholder": ""
+            }
+          ]
+        },
+        "childMetadata": {
+          "templateName": "",
+          "required": [],
+          "properties": [
+            {
+              "code": "name",
+              "editable": true,
+              "displayProperty": "Editable",
+              "dataType": "text",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1"
+              },
+              "description": "Name",
+              "index": 1,
+              "label": "Name",
+              "required": false,
+              "name": "Name",
+              "inputType": "text",
+              "placeholder": "Name",
+              "validations": [
+                {
+                  "type": "maxlength",
+                  "value": "50",
+                  "message": "Input is Exceeded"
+                }
+              ]
+            },
+            {
+              "code": "board",
+              "visible": true,
+              "depends": [],
+              "editable": false,
+              "dataType": "text",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "description": "Board",
+              "label": "Board/Syllabus of the audience",
+              "required": true,
+              "name": "Board/Syllabus",
+              "inputType": "select",
+              "placeholder": "Select Board/Syllabus",
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Board is required"
+                }
+              ]
+            },
+            {
+              "code": "medium",
+              "visible": true,
+              "depends": [
+                "board"
+              ],
+              "editable": false,
+              "dataType": "list",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "description": "",
+              "label": "Medium(s) of the audience",
+              "required": true,
+              "name": "Medium",
+              "inputType": "nestedselect",
+              "placeholder": "Select Medium",
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Medium is required"
+                }
+              ]
+            },
+            {
+              "code": "gradeLevel",
+              "visible": true,
+              "depends": [
+                "board",
+                "medium"
+              ],
+              "editable": false,
+              "dataType": "list",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "description": "Class",
+              "label": "Class(es) of the audience",
+              "required": true,
+              "name": "Class",
+              "inputType": "nestedselect",
+              "placeholder": "Select Class",
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Grade is required"
+                }
+              ]
+            },
+            {
+              "code": "subject",
+              "visible": true,
+              "depends": [
+                "board",
+                "medium",
+                "gradeLevel"
+              ],
+              "editable": false,
+              "dataType": "list",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "description": "",
+              "label": "Subject(s) of the audience",
+              "required": true,
+              "name": "Subject",
+              "inputType": "nestedselect",
+              "placeholder": "Select Subject",
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Subject is required"
+                }
+              ]
+            },
+            {
+              "code": "topic",
+              "visible": true,
+              "editable": true,
+              "dataType": "list",
+              "depends": [
+                "board",
+                "medium",
+                "gradeLevel",
+                "subject"
+              ],
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "name": "Topic",
+              "description": "Choose chapters",
+              "inputType": "topicselector",
+              "label": "Chapters covered",
+              "placeholder": "Choose chapters",
+              "required": true,
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Topic is required"
+                }
+              ]
+            },
+            {
+              "code": "learningOutcome",
+              "dataType": "list",
+              "description": "",
+              "editable": true,
+              "inputType": "select",
+              "label": "Competency",
+              "name": "Learning Outcome",
+              "isSearchable": true,
+              "placeholder": "Select competencies",
+              "depends": [
+                "topic"
+              ],
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "required": true,
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Learning Outcome is required"
+                }
+              ]
+            },
+            {
+              "code": "maxScore",
+              "dataType": "number",
+              "description": "Marks",
+              "editable": true,
+              "inputType": "text",
+              "label": "Marks:",
+              "name": "Marks",
+              "placeholder": "Marks",
+              "tooltip": "Provide marks of this content.",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "validations": [
+                {
+                  "type": "pattern",
+                  "value": "(([0-9]+)([.]){0,1}([0-9]*))",
+                  "message": "Input should be numeric"
+                }
+              ],
+              "required": true
+            },
+            {
+              "code": "bloomsLevel",
+              "inputType": "select",
+              "dataType": "text",
+              "output": "value",
+              "description": "Cognitive processes involved to answer the question set",
+              "placeholder": "Select skills",
+              "terms": [
+                {
+                  "value": "knowledge",
+                  "name": "Knowledge"
+                },
+                {
+                  "value": "understanding",
+                  "name": "Understanding"
+                },
+                {
+                  "value": "application",
+                  "name": "Application"
+                }
+              ],
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "required": true,
+              "visible": true,
+              "editable": true,
+              "name": "Learning Level",
+              "label": "Skills Tested",
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Skills Tested is required"
+                }
+              ]
+            },
+            {
+              "code": "author",
+              "dataType": "text",
+              "description": "Author",
+              "editable": false,
+              "index": 5,
+              "inputType": "text",
+              "label": "Author",
+              "name": "Author",
+              "placeholder": "Author",
+              "tooltip": "Provide name of creator of this content.",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "required": true,
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Author is required"
+                }
+              ]
+            },
+            {
+              "code": "copyright",
+              "dataType": "text",
+              "description": "Copyright",
+              "editable": false,
+              "index": 4,
+              "inputType": "text",
+              "label": "Copyright and Year",
+              "name": "Copyright",
+              "default": "SCERT 2021",
+              "placeholder": "Enter Copyright and Year",
+              "tooltip": "If you are an individual, creating original content, you are the copyright holder. If you are creating this course content on behalf of an organisation, the organisation may be the copyright holder. ",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "required": true,
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Copyright is required"
+                }
+              ]
+            }
+          ]
+        },
+        "create": {
+          "templateName": "",
+          "required": [],
+          "properties": [
+            {
+              "name": "Basic details",
+              "fields": [
+                {
+                  "code": "appIcon",
+                  "name": "Icon",
+                  "label": "Icon",
+                  "placeholder": "Icon",
+                  "description": "Icon for the question set",
+                  "dataType": "text",
+                  "inputType": "appIcon",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "name",
+                  "name": "Name",
+                  "label": "Name",
+                  "placeholder": "Enter Name",
+                  "description": "Name of the Question Set",
+                  "dataType": "text",
+                  "inputType": "text",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "maxLength",
+                      "value": "120",
+                      "message": "Entered name is too long"
+                    },
+                    {
+                      "type": "required",
+                      "message": "Name is required"
+                    }
+                  ]
+                },
+                {
+                  "code": "description",
+                  "name": "Description",
+                  "label": "Description",
+                  "placeholder": "Enter Description",
+                  "description": "Description of the Question Set",
+                  "dataType": "text",
+                  "inputType": "textarea",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  }
+                },
+                {
+                  "code": "keywords",
+                  "name": "Keywords",
+                  "label": "Keywords",
+                  "placeholder": "Enter Keywords",
+                  "description": "Keywords for the Question Set",
+                  "dataType": "list",
+                  "inputType": "keywords",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "instructions",
+                  "name": "Instructions",
+                  "label": "Instructions",
+                  "placeholder": "Enter Instructions",
+                  "description": "Instructions for the question set",
+                  "dataType": "text",
+                  "inputType": "textarea",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "textbox sb-g-col-lg-2 required-2"
+                  },
+                  "validations": [
+                    {
+                      "type": "maxLength",
+                      "value": "800",
+                      "message": "Input is Exceeded"
+                    }
+                  ]
+                },
+                {
+                  "code": "primaryCategory",
+                  "name": "Type",
+                  "label": "Type",
+                  "placeholder": "",
+                  "description": "Type or Category of the Question Set",
+                  "dataType": "text",
+                  "inputType": "text",
+                  "editable": false,
+                  "required": true,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  }
+                },
+                {
+                  "code": "additionalCategories",
+                  "name": "Additional Category",
+                  "label": "Additional Category",
+                  "placeholder": "Select Additional Category",
+                  "description": "Additonal Category of the Question Set",
+                  "default": "",
+                  "dataType": "list",
+                  "inputType": "nestedselect",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "",
+              "fields": [
+                {
+                  "code": "board",
+                  "name": "Board/Syllabus",
+                  "label": "Board/Syllabus",
+                  "placeholder": "Select Board/Syllabus",
+                  "description": "Board or Syallbus of the Question Set",
+                  "default": "",
+                  "dataType": "text",
+                  "inputType": "select",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "depends": [],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Board is required"
+                    }
+                  ]
+                },
+                {
+                  "code": "medium",
+                  "name": "Medium",
+                  "label": "Medium",
+                  "placeholder": "Select Medium",
+                  "description": "Medium of Instruction for the Question Set",
+                  "default": "",
+                  "dataType": "list",
+                  "inputType": "nestedselect",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "depends": [
+                    "board"
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Medium is required"
+                    }
+                  ]
+                },
+                {
+                  "code": "gradeLevel",
+                  "name": "Class",
+                  "label": "Class",
+                  "placeholder": "Select Class",
+                  "description": "Class of the Question Set",
+                  "default": "",
+                  "dataType": "list",
+                  "inputType": "nestedselect",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "depends": [
+                    "board",
+                    "medium"
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Class is required"
+                    }
+                  ]
+                },
+                {
+                  "code": "subject",
+                  "name": "Subject",
+                  "label": "Subject",
+                  "placeholder": "Select Subject",
+                  "description": "Subject of the Question Set",
+                  "default": "",
+                  "dataType": "list",
+                  "inputType": "nestedselect",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "depends": [
+                    "board",
+                    "medium",
+                    "gradeLevel"
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Subject is required"
+                    }
+                  ]
+                },
+                {
+                  "code": "audience",
+                  "name": "Audience",
+                  "label": "Audience",
+                  "placeholder": "Select Audience",
+                  "description": "Audience of the Question Set",
+                  "dataType": "list",
+                  "inputType": "select",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "range": [
+                    "Student",
+                    "Teacher",
+                    "Administrator"
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Audience is required"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Question set behaviour",
+              "fields": [
+                {
+                  "code": "shuffle",
+                  "name": "Shuffle Questions",
+                  "label": "Shuffle Questions",
+                  "placeholder": "Shuffle Questions",
+                  "description": "Questions will be Shuffled while playing",
+                  "default": "false",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "maxQuestions",
+                  "name": "Show Questions",
+                  "label": "Show Questions",
+                  "placeholder": "Number of questions to be shown",
+                  "description": "Number of questions to be shown",
+                  "default": "",
+                  "dataType": "number",
+                  "inputType": "select",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "showFeedback",
+                  "name": "Show Feedback",
+                  "label": "Show Feedback",
+                  "placeholder": "Show Correct/Incorrect Feedback",
+                  "description": "Show Correct/Incorrect Feedback",
+                  "default": "Yes",
+                  "dataType": "text",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "showSolutions",
+                  "name": "Show Solution",
+                  "label": "Show Solution",
+                  "placeholder": "Show Solution",
+                  "description": "Show Solution",
+                  "default": "Yes",
+                  "dataType": "text",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "maxTime",
+                  "name": "Maximum Time",
+                  "label": "Maximum time",
+                  "placeholder": "hh:mm:ss",
+                  "description": "Maximum Time for the question set",
+                  "default": "300",
+                  "dataType": "text",
+                  "inputType": "timer",
+                  "editable": true,
+                  "visible": true,
+                  "required": false,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  },
+                  "validations": [
+                    {
+                      "type": "time",
+                      "message": "Please enter in hh:mm:ss",
+                      "value": "HH:mm:ss"
+                    },
+                    {
+                      "type": "max",
+                      "value": "05:59:59",
+                      "message": "Maximum time should be less than 05:59:59"
+                    }
+                  ]
+                },
+                {
+                  "code": "warningTime",
+                  "name": "Warning Time",
+                  "label": "Warning Time",
+                  "placeholder": "hh:mm:ss",
+                  "description": "Warning time for the question set",
+                  "dataType": "list",
+                  "inputType": "timer",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "depends": [
+                    "maxTime"
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  },
+                  "validations": [
+                    {
+                      "type": "time",
+                      "message": "Please enter hh:mm:ss",
+                      "value": "HH:mm:ss"
+                    },
+                    {
+                      "type": "compare",
+                      "criteria": {
+                        "<=": [
+                          "maxTime"
+                        ]
+                      },
+                      "message": "Warning time should be less than Max time"
+                    }
+                  ]
+                },
+                {
+                  "code": "showTimer",
+                  "visible": false,
+                  "editable": false,
+                  "dataType": "text",
+                  "default": "Yes",
+                  "depends": [
+                    "maxTime"
+                  ],
+                  "name": "Show Timer",
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  },
+                  "description": "Show Timer",
+                  "inputType": "checkbox",
+                  "label": "Show Timer",
+                  "placeholder": "Show Timer",
+                  "required": false
+                },
+                {
+                  "code": "visibility",
+                  "name": "Visibility",
+                  "label": "Visibility",
+                  "placeholder": "Select visibility",
+                  "description": "Visibility of the question set",
+                  "dataType": "text",
+                  "inputType": "select",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "default": "Default",
+                  "range": [
+                    "Default"
+                  ],
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Visibility is required"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Ownership & Legal",
+              "fields": [
+                {
+                  "code": "author",
+                  "name": "Author",
+                  "label": "Author",
+                  "placeholder": "Enter Author",
+                  "description": "Author of the question set",
+                  "default": "",
+                  "dataType": "text",
+                  "inputType": "text",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Author is required"
+                    }
+                  ]
+                },
+                {
+                  "code": "attributions",
+                  "name": "Attributions",
+                  "label": "Attributions",
+                  "placeholder": "Enter Attributions",
+                  "description": "Attributions of the question set",
+                  "dataType": "text",
+                  "inputType": "text",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "copyright",
+                  "name": "Copyright",
+                  "label": "Copyright",
+                  "placeholder": "Copyright",
+                  "description": "Copyright",
+                  "dataType": "text",
+                  "inputType": "text",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Copyright is required"
+                    }
+                  ]
+                },
+                {
+                  "code": "license",
+                  "name": "License",
+                  "label": "License",
+                  "placeholder": "Select license",
+                  "description": "License",
+                  "defaultValue": "CC BY 4.0",
+                  "dataType": "text",
+                  "inputType": "select",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "range": "",
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "modify": {
+          "properties": [
+            {
+              "name": "Details",
+              "fields": [
+                {
+                  "code": "name",
+                  "name": "Name",
+                  "label": "Name",
+                  "placeholder": "Enter Name",
+                  "description": "Name of the Question Set",
+                  "dataType": "text",
+                  "inputType": "text",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "maxLength",
+                      "value": "120",
+                      "message": "Entered name is too long"
+                    },
+                    {
+                      "type": "required",
+                      "message": "Name is required"
+                    }
+                  ]
+                },
+                {
+                  "code": "description",
+                  "name": "Description",
+                  "label": "Description",
+                  "placeholder": "Enter Description",
+                  "description": "Description of the Question Set",
+                  "dataType": "text",
+                  "inputType": "textarea",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  }
+                },
+                {
+                  "code": "instructions",
+                  "name": "Instructions",
+                  "label": "Instructions",
+                  "placeholder": "Enter Instructions",
+                  "description": "Instructions for the question set",
+                  "dataType": "text",
+                  "inputType": "textarea",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-2 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "maxLength",
+                      "value": "500",
+                      "message": "Input is Exceeded"
+                    }
+                  ]
+                },
+                {
+                  "code": "audience",
+                  "name": "Audience",
+                  "label": "Audience",
+                  "placeholder": "Select Audience",
+                  "description": "Audience of the Question Set",
+                  "dataType": "list",
+                  "inputType": "select",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "range": [
+                    "Student",
+                    "Teacher",
+                    "Administrator"
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Audience is required"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "publishchecklist": {
+          "templateName": "",
+          "required": [],
+          "properties": [
+            {
+              "name": "Appropriateness",
+              "renderingHints": {
+                "class": "d-grid-inline-3 display-sectionName"
+              },
+              "fields": [
+                {
+                  "code": "appropriatenessOne",
+                  "name": "No Hate speech, Abuse, Violence, Profanity",
+                  "label": "No Hate speech, Abuse, Violence, Profanity",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "appropriatenessTwo",
+                  "name": "No Sexual content, Nudity or Vulgarity",
+                  "label": "No Sexual content, Nudity or Vulgarity",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "appropriatenessThree",
+                  "name": "No Discrimination or Defamation",
+                  "label": "No Discrimination or Defamation",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "appropriatenessFour",
+                  "name": "Is suitable for children",
+                  "label": "Is suitable for children",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Content details",
+              "renderingHints": {
+                "class": "d-grid-inline-3 display-sectionName"
+              },
+              "fields": [
+                {
+                  "code": "contentdetailsOne",
+                  "name": "Appropriate Title, Description",
+                  "label": "Appropriate Title, Description",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "contentdetailsTwo",
+                  "name": "Correct Board, Grade, Subject, Medium",
+                  "label": "Correct Board, Grade, Subject, Medium",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "contentdetailsThree",
+                  "name": "Appropriate tags such as Resource Type, Concepts",
+                  "label": "Appropriate tags such as Resource Type, Concepts",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "contentdetailsFour",
+                  "name": "Relevant Keywords",
+                  "label": "Relevant Keywords",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Usability",
+              "renderingHints": {
+                "class": "d-grid-inline-3 display-sectionName"
+              },
+              "fields": [
+                {
+                  "code": "usabilityOne",
+                  "name": "Content plays correctly",
+                  "label": "Content plays correctly",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "usabilityTwo",
+                  "name": "Can see the content clearly on Desktop and App",
+                  "label": "Can see the content clearly on Desktop and App",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "usabilityThree",
+                  "name": "Audio (if any) is clear and easy to understand",
+                  "label": "Audio (if any) is clear and easy to understand",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "usabilityFour",
+                  "name": "No Spelling mistakes in the text",
+                  "label": "No Spelling mistakes in the text",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "usabilityFive",
+                  "name": "Language is simple to understand",
+                  "label": "Language is simple to understand",
+                  "dataType": "boolean",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": ""
+                    }
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "searchConfig": {
+          "templateName": "",
+          "required": [],
+          "properties": [
+            {
+              "code": "board",
+              "visible": true,
+              "depends": [],
+              "editable": true,
+              "dataType": "list",
+              "description": "Board",
+              "label": "Board",
+              "required": false,
+              "name": "Board",
+              "inputType": "select",
+              "placeholder": "Select Board",
+              "output": "name",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1"
+              }
+            },
+            {
+              "code": "medium",
+              "visible": true,
+              "editable": true,
+              "dataType": "list",
+              "description": "",
+              "label": "Medium(s)",
+              "required": false,
+              "name": "Medium",
+              "inputType": "nestedselect",
+              "placeholder": "Select Medium",
+              "output": "name",
+              "depends": [
+                "board"
+              ],
+              "renderingHints": {
+                "class": "sb-g-col-lg-1"
+              }
+            },
+            {
+              "code": "gradeLevel",
+              "visible": true,
+              "depends": [
+                "board",
+                "medium"
+              ],
+              "editable": true,
+              "default": "",
+              "dataType": "list",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1"
+              },
+              "description": "Class",
+              "label": "Class(es)",
+              "required": false,
+              "name": "Class",
+              "inputType": "nestedselect",
+              "placeholder": "Select Class",
+              "output": "name"
+            },
+            {
+              "code": "subject",
+              "visible": true,
+              "depends": [
+                "board",
+                "medium",
+                "gradeLevel"
+              ],
+              "editable": true,
+              "default": "",
+              "dataType": "list",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1"
+              },
+              "description": "",
+              "label": "Subject(s)",
+              "required": false,
+              "name": "Subject",
+              "inputType": "nestedselect",
+              "placeholder": "Select Subject",
+              "output": "name"
+            },
+            {
+              "code": "topic",
+              "visible": true,
+              "editable": true,
+              "dataType": "list",
+              "depends": [
+                "board",
+                "medium",
+                "gradeLevel",
+                "subject"
+              ],
+              "default": "",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1"
+              },
+              "name": "Topic",
+              "description": "Choose a Chapters",
+              "inputType": "topicselector",
+              "label": "Chapter(s)",
+              "placeholder": "Choose Chapter",
+              "required": false
+            },
+            {
+              "inputType": "nestedselect",
+              "code": "learningOutcome",
+              "visible": true,
+              "depends": [
+                "board",
+                "medium",
+                "gradeLevel",
+                "subject",
+                "topic"
+              ],
+              "editable": true,
+              "dataType": "list",
+              "description": "learningOutcome",
+              "label": "Competency",
+              "required": false,
+              "name": "learningOutcome",
+              "placeholder": "Select Competency",
+              "output": "name",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1"
+              }
+            }
+          ]
+        },
+        "unitMetadata": {
+          "templateName": "",
+          "required": [],
+          "properties": [
+            {
+              "code": "name",
+              "dataType": "text",
+              "description": "Name of the content",
+              "editable": true,
+              "inputType": "text",
+              "label": "Title",
+              "name": "Title",
+              "placeholder": "Title",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "required": true,
+              "visible": true,
+              "validations": [
+                {
+                  "type": "max",
+                  "value": "120",
+                  "message": "Input is Exceeded"
+                },
+                {
+                  "type": "required",
+                  "message": "Title is required"
+                }
+              ]
+            },
+            {
+              "code": "description",
+              "dataType": "text",
+              "description": "Description of the content",
+              "editable": true,
+              "inputType": "textarea",
+              "label": "Description",
+              "name": "Description",
+              "placeholder": "Description",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "required": true,
+              "visible": true,
+              "validations": [
+                {
+                  "type": "max",
+                  "value": "500",
+                  "message": "Input is Exceeded"
+                }
+              ]
+            },
+            {
+              "code": "keywords",
+              "visible": true,
+              "editable": true,
+              "dataType": "list",
+              "name": "Keywords",
+              "renderingHints": {
+                "class": "sb-g-col-lg-1 required"
+              },
+              "description": "Keywords for the content",
+              "inputType": "keywords",
+              "label": "keywords",
+              "placeholder": "Enter Keywords",
+              "required": false,
+              "validations": [
+                {
+                  "type": "required",
+                  "message": "Keyword is required"
+                }
+              ]
+            },
+            {
+              "code": "topic",
+              "visible": true,
+              "depends": [],
+              "editable": true,
+              "dataType": "list",
+              "renderingHints": {},
+              "name": "Topic",
+              "description": "Choose a Topics",
+              "inputType": "topicselector",
+              "label": "Topics",
+              "placeholder": "Choose Topics",
+              "required": false
+            }
+          ]
+        }
+      }
+    }
+  }
+}

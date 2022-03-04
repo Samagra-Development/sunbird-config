@@ -1,7 +1,7 @@
 {
   "result": {
     "objectCategoryDefinition": {
-      "identifier": "obj-cat:exam-question-set_questionset_01309282781705830427",
+      "identifier": "obj-cat:exam-question-set_questionset_01334203864941363283",
       "objectMetadata": {
         "childrenConfig": {
           "choice": {
@@ -577,12 +577,12 @@
                   "required": false,
                   "visible": true,
                   "renderingHints": {
-                    "class": "sb-g-col-lg-2 required"
+                    "class": "textbox sb-g-col-lg-2 required-2"
                   },
                   "validations": [
                     {
                       "type": "maxLength",
-                      "value": "500",
+                      "value": "800",
                       "message": "Input is Exceeded"
                     }
                   ]
@@ -600,6 +600,22 @@
                   "visible": true,
                   "renderingHints": {
                     "class": "sb-g-col-lg-1 required"
+                  }
+                },
+                {
+                  "code": "additionalCategories",
+                  "name": "Additional Category",
+                  "label": "Additional Category",
+                  "placeholder": "Select Additional Category",
+                  "description": "Additonal Category of the Question Set",
+                  "default": "",
+                  "dataType": "list",
+                  "inputType": "nestedselect",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
                   }
                 }
               ]
@@ -756,6 +772,38 @@
                   }
                 },
                 {
+                  "code": "maxQuestions",
+                  "name": "Show Questions",
+                  "label": "Show Questions",
+                  "placeholder": "Number of questions to be shown",
+                  "description": "Number of questions to be shown",
+                  "default": "",
+                  "dataType": "number",
+                  "inputType": "select",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
+                  "code": "showFeedback",
+                  "name": "Show Feedback",
+                  "label": "Show Feedback",
+                  "placeholder": "Show Correct/Incorrect Feedback",
+                  "description": "Show Correct/Incorrect Feedback",
+                  "default": "Yes",
+                  "dataType": "text",
+                  "inputType": "checkbox",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  }
+                },
+                {
                   "code": "showSolutions",
                   "name": "Show Solution",
                   "label": "Show Solution",
@@ -770,6 +818,68 @@
                   "renderingHints": {
                     "class": "sb-g-col-lg-1"
                   }
+                },
+                {
+                  "code": "maxTime",
+                  "name": "Maximum Time",
+                  "label": "Maximum time",
+                  "placeholder": "hh:mm:ss",
+                  "description": "Maximum Time for the question set",
+                  "default": "300",
+                  "dataType": "text",
+                  "inputType": "timer",
+                  "editable": true,
+                  "visible": true,
+                  "required": false,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  },
+                  "validations": [
+                    {
+                      "type": "time",
+                      "message": "Please enter in hh:mm:ss",
+                      "value": "HH:mm:ss"
+                    },
+                    {
+                      "type": "max",
+                      "value": "05:59:59",
+                      "message": "Maximum time should be less than 05:59:59"
+                    }
+                  ]
+                },
+                {
+                  "code": "warningTime",
+                  "name": "Warning Time",
+                  "label": "Warning Time",
+                  "placeholder": "hh:mm:ss",
+                  "description": "Warning time for the question set",
+                  "dataType": "list",
+                  "inputType": "timer",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "depends": [
+                    "maxTime"
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1"
+                  },
+                  "validations": [
+                    {
+                      "type": "time",
+                      "message": "Please enter hh:mm:ss",
+                      "value": "HH:mm:ss"
+                    },
+                    {
+                      "type": "compare",
+                      "criteria": {
+                        "<=": [
+                          "maxTime"
+                        ]
+                      },
+                      "message": "Warning time should be less than Max time"
+                    }
+                  ]
                 },
                 {
                   "code": "showTimer",
@@ -894,6 +1004,104 @@
                   "renderingHints": {
                     "class": "sb-g-col-lg-1 required"
                   }
+                }
+              ]
+            }
+          ]
+        },
+        "modify": {
+          "properties": [
+            {
+              "name": "Details",
+              "fields": [
+                {
+                  "code": "name",
+                  "name": "Name",
+                  "label": "Name",
+                  "placeholder": "Enter Name",
+                  "description": "Name of the Question Set",
+                  "dataType": "text",
+                  "inputType": "text",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "maxLength",
+                      "value": "120",
+                      "message": "Entered name is too long"
+                    },
+                    {
+                      "type": "required",
+                      "message": "Name is required"
+                    }
+                  ]
+                },
+                {
+                  "code": "description",
+                  "name": "Description",
+                  "label": "Description",
+                  "placeholder": "Enter Description",
+                  "description": "Description of the Question Set",
+                  "dataType": "text",
+                  "inputType": "textarea",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  }
+                },
+                {
+                  "code": "instructions",
+                  "name": "Instructions",
+                  "label": "Instructions",
+                  "placeholder": "Enter Instructions",
+                  "description": "Instructions for the question set",
+                  "dataType": "text",
+                  "inputType": "textarea",
+                  "editable": true,
+                  "required": false,
+                  "visible": true,
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-2 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "maxLength",
+                      "value": "500",
+                      "message": "Input is Exceeded"
+                    }
+                  ]
+                },
+                {
+                  "code": "audience",
+                  "name": "Audience",
+                  "label": "Audience",
+                  "placeholder": "Select Audience",
+                  "description": "Audience of the Question Set",
+                  "dataType": "list",
+                  "inputType": "select",
+                  "editable": true,
+                  "required": true,
+                  "visible": true,
+                  "range": [
+                    "Student",
+                    "Teacher",
+                    "Administrator"
+                  ],
+                  "renderingHints": {
+                    "class": "sb-g-col-lg-1 required"
+                  },
+                  "validations": [
+                    {
+                      "type": "required",
+                      "message": "Audience is required"
+                    }
+                  ]
                 }
               ]
             }
