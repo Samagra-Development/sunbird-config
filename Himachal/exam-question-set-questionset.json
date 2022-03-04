@@ -5,7 +5,7 @@
       "objectMetadata": {
         "childrenConfig": {
           "choice": {
-            "numberOfOptions": 4
+            "numberOfOptions": 2
           }
         },
         "config": {
@@ -403,42 +403,6 @@
                 }
               ],
               "required": true
-            },
-            {
-              "code": "bloomsLevel",
-              "inputType": "select",
-              "dataType": "text",
-              "output": "value",
-              "description": "Cognitive processes involved to answer the question set",
-              "placeholder": "Select skills",
-              "terms": [
-                {
-                  "value": "knowledge",
-                  "name": "Knowledge"
-                },
-                {
-                  "value": "understanding",
-                  "name": "Understanding"
-                },
-                {
-                  "value": "application",
-                  "name": "Application"
-                }
-              ],
-              "renderingHints": {
-                "class": "sb-g-col-lg-1 required"
-              },
-              "required": true,
-              "visible": true,
-              "editable": true,
-              "name": "Learning Level",
-              "label": "Skills Tested",
-              "validations": [
-                {
-                  "type": "required",
-                  "message": "Skills Tested is required"
-                }
-              ]
             },
             {
               "code": "author",
@@ -1004,104 +968,6 @@
                   "renderingHints": {
                     "class": "sb-g-col-lg-1 required"
                   }
-                }
-              ]
-            }
-          ]
-        },
-        "modify": {
-          "properties": [
-            {
-              "name": "Details",
-              "fields": [
-                {
-                  "code": "name",
-                  "name": "Name",
-                  "label": "Name",
-                  "placeholder": "Enter Name",
-                  "description": "Name of the Question Set",
-                  "dataType": "text",
-                  "inputType": "text",
-                  "editable": true,
-                  "required": true,
-                  "visible": true,
-                  "renderingHints": {
-                    "class": "sb-g-col-lg-1 required"
-                  },
-                  "validations": [
-                    {
-                      "type": "maxLength",
-                      "value": "120",
-                      "message": "Entered name is too long"
-                    },
-                    {
-                      "type": "required",
-                      "message": "Name is required"
-                    }
-                  ]
-                },
-                {
-                  "code": "description",
-                  "name": "Description",
-                  "label": "Description",
-                  "placeholder": "Enter Description",
-                  "description": "Description of the Question Set",
-                  "dataType": "text",
-                  "inputType": "textarea",
-                  "editable": true,
-                  "required": false,
-                  "visible": true,
-                  "renderingHints": {
-                    "class": "sb-g-col-lg-1 required"
-                  }
-                },
-                {
-                  "code": "instructions",
-                  "name": "Instructions",
-                  "label": "Instructions",
-                  "placeholder": "Enter Instructions",
-                  "description": "Instructions for the question set",
-                  "dataType": "text",
-                  "inputType": "textarea",
-                  "editable": true,
-                  "required": false,
-                  "visible": true,
-                  "renderingHints": {
-                    "class": "sb-g-col-lg-2 required"
-                  },
-                  "validations": [
-                    {
-                      "type": "maxLength",
-                      "value": "500",
-                      "message": "Input is Exceeded"
-                    }
-                  ]
-                },
-                {
-                  "code": "audience",
-                  "name": "Audience",
-                  "label": "Audience",
-                  "placeholder": "Select Audience",
-                  "description": "Audience of the Question Set",
-                  "dataType": "list",
-                  "inputType": "select",
-                  "editable": true,
-                  "required": true,
-                  "visible": true,
-                  "range": [
-                    "Student",
-                    "Teacher",
-                    "Administrator"
-                  ],
-                  "renderingHints": {
-                    "class": "sb-g-col-lg-1 required"
-                  },
-                  "validations": [
-                    {
-                      "type": "required",
-                      "message": "Audience is required"
-                    }
-                  ]
                 }
               ]
             }
